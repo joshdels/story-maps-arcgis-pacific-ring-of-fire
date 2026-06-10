@@ -5,32 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magnitude 7.8 Earthquake Strikes Philippines | Story Maps</title>
     <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.31/esri/themes/light/main.css"
+    />
+
+    <script src="https://js.arcgis.com/4.31/"></script>
   </head>
   <body>
-    <nav>
-      <h1>Earthquake</h1>
-    </nav>
     <header>
       <img
         src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/4XW53Q5IDRMNRJ7XURF5WJVQ7Y.jpg"
         alt="jollibe-collapse"
       />
-      <h1>Magnitude 7.8 Earthquake Strikes Philippines</h1>
-      <p>June 7, 2026</p>
+
+      <div class="hero-text">
+        <h1>Magnitude 7.8 Earthquake Strikes Southern Philippines</h1>
+        <p>June 8, 2026</p>
+      </div>
     </header>
     <section>
       <h1>What happened?</h1>
 
-      <div>
+      <div class="card-container">
         <div class="card">
           <h3>magnitude</h3>
-          <h1>7.8</h1>
+          <h1 class="accent">7.8</h1>
         </div>
 
         <div class="card">
-          <h3>time</h3>
-          <h1>11:37 PM (UTC)</h1>
-          <h1>Ph time</h1>
+          <h3>time (utc)</h3>
+          <h1>11:37 PM</h1>
           <p>June 7, 2026</p>
         </div>
 
@@ -52,7 +58,7 @@
         </div>
       </div>
 
-      <main>
+      <main class="content">
         <p>
           A magnitude 7.8 earthquake struck the southern coast of Mindanao at
           11:37 p.m. UTC on June 7, 2026, causing widespread damage to
@@ -80,30 +86,52 @@
         </p>
       </main>
 
-      <footer>
-        <div>
-          <h1>Epicenter</h1>
-          <p>~16 mi WSW of Kablalan, Mindanao</p>
+      <div class="footer">
+        <div class="header-footer">
+          <div>
+            <h1>Epicenter</h1>
+            <p>~16 mi WSW of Kablalan, Mindanao</p>
+          </div>
+          <div>
+            <h1>Duration</h1>
+            <p>~30 seconds of primary shaking</p>
+          </div>
         </div>
-        <div>
-          <h1>Duration</h1>
-          <p>~30 seconds of primary shaking</p>
-        </div>
-        <div>
+
+        <div class="areas-affected">
           <h1>Affected regions (NDRRMC)</h1>
           <span>SOCCSKSARGEN</span>
           <span>Zamboanga</span>
           <span>Davao</span>
           <span>Bangsamoro</span>
         </div>
-      </footer>
+      </div>
     </section>
 
-
     <!-- Interactive (Epicenter)-->
-    <div class="map-one"></div>
+    <div id="map-one"></div>
 
-    <section class="events"></section>
+    <section class="events">
+      <h1>Damage Across Mindanao</h1>
+
+      <div class="carousel">
+        <button id="prev">&#10094;</button>
+
+        <img
+          id="carousel-image"
+          src="https://www.stuff.co.nz/media/images/9Tzi8ywRz924XE3uHaD6DZ3Ef+IdbOiYlvIROR5vlqUeRrexTocZGobKRJ9od%2Fgnk3B%2FCeKTmTAsIjj6Q0YaYVLLquPCEw6padklLo9jGyjdmWs7YEtuPgT6t6o5DdieRH41ryTvRGccXxeER%2FuJHdl9C89kOro2wnsdGzBX90ykuYYsqD+L3aWz1y2ERlu0T4HXxOIrAc3GdofemLYij7XgG3Lh2bxDeUHieLlISLg="
+          alt="Earthquake Damage"
+        />
+
+        <button id="next">&#10095;</button>
+      </div>
+
+      <p>
+        Images showing structural damage, collapsed buildings, and emergency
+        response efforts following the magnitude 7.8 earthquake that affected
+        several areas across southern Mindanao.
+      </p>
+    </section>
 
     <!-- 3
       Cluster map — earthquake history in the Philippines
@@ -116,7 +144,7 @@
       Filter widget: by magnitude range (≥5.0, ≥6.0, ≥7.0)
       Short caption: "Philippines records ~20 significant quakes per year" -->
 
-    <div class="map-two"></div>
+    <div id="map-two"></div>
 
     <!-- 4
     4
@@ -130,7 +158,7 @@
       Each card: 1 headline stat + 2–3 sentences + a supporting image or chart 
     -->
 
-    <div class="map-three"></div>
+    <div id="map-three"></div>
 
     <!-- 
     5
@@ -175,4 +203,7 @@ Photo credits (e.g., AP, Reuters, local news) — per image
 APA or Chicago format recommended; include access dates for web sources
     -->
   </body>
+
+  <script src="index.js"></script>
+  <script src="mapOne.js"></script>
 </html>
